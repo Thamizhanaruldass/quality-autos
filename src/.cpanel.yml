@@ -1,0 +1,27 @@
+---
+# cPanel AutoDeploy configuration for React.js app
+
+deploy:
+  tasks:
+    - yarn_install_or_npm_install
+    - build_react_app
+    - move_build_to_qualityautos_in
+
+yarn_install_or_npm_install:
+  use:
+    - shell
+  commands:
+    - npm install
+
+build_react_app:
+  use:
+    - shell
+  commands:
+    - npm run build
+
+move_build_to_qualityautos_in:
+  use:
+    - shell
+  commands:
+    - rm -rf ../qualityautos.in/*
+    - cp -r build/* ../qualityautos.in/
