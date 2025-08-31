@@ -1,0 +1,74 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fafbfe;
+  margin: 0;
+  color: #19343b;
+}
+.App {
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.06);
+  border-radius: 8px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 16px 0;
+}
+.service-card, .offer-card {
+  background: #f2f6fb;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.05);
+  padding: 20px;
+  min-width: 280px;
+  scroll-snap-align: start;
+  transition: box-shadow 0.22s;
+}
+.service-card:hover, .offer-card:hover {
+  box-shadow: 0 4px 16px rgba(59,130,246,0.17);
+}
+@media (max-width: 768px) {
+  .App {
+    border-radius: 0;
+    max-width: 100vw;
+  }
+  .service-card, .offer-card {
+    min-width: 90vw;
+  }
+}
+.header, .footer {
+  background: #219089;
+  color: #fff;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer {
+  background: #15424d;
+  font-size: 14px;
+  padding: 20px 32px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.cta-button {
+  background: #fca311;
+  color: #15424d;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  padding: 10px 28px;
+  cursor: pointer;
+  margin-top: 14px;
+  font-weight: bold;
+  box-shadow: 0 1px 8px rgba(252,163,17,0.08);
+}
+.cta-button:hover {
+  background: #219089;
+  color: #fff;
+}
